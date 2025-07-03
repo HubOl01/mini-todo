@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+    <input
+        name="title"
+        class="form-control full-width m-2"
+        [(ngModel)]="title"
+        required
+        placeholder="Название задачи" />
+    <textarea class="form-control full-width m-2" name="description"
+        placeholder="Описание (необязательно)" rows="3"
+        [(ngModel)]="description"></textarea>
+    <button type="submit" [disabled]="form.invalid"
+        class="btn btn-primary full-width m-2">Добавить</button>
+</form>

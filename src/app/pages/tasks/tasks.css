@@ -1,0 +1,15 @@
+.status {
+  color: white;
+  padding: 6px 10px;
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.status-red {
+  background: red;
+}
+
+.status-green {
+  background: rgb(8, 179, 8);
+}

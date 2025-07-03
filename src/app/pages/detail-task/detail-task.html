@@ -1,0 +1,20 @@
+<div class="p-5">
+    <h2>Подробная информация</h2>
+
+    <div class="mt-5" *ngIf="task">
+        <p><strong>Название:</strong> {{ task.title }}</p>
+        <p><strong>Описание:</strong> {{ task.description || '' }}</p>
+        <p><strong>Статус:</strong> {{ task.status ? "Выполнена" :
+            "Не выполнена"}}</p>
+    </div>
+    <div>
+        <button class="btn btn-outline-primary"
+            (click)="onChangeTask()">{{task?.status === false ?
+            "Отметить статус как выполненный" :
+            "Отметить статус как невыполненный"}}</button>
+    </div>
+    <div class="mt-2">
+        <button class="btn btn-primary"
+            routerLink="/tasks">Назад</button>
+    </div>
+</div>

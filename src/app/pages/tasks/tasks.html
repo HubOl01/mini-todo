@@ -1,0 +1,33 @@
+<div class="class ps-5 p-4">
+    <h1>Todo-list</h1>
+</div>
+
+<div class="row w-100">
+    <div
+        class="col-12 col-lg-4 col-xl-3 col-xxl-2 col-md-4 ps-4 pe-4">
+        <app-task-form *ngIf="isAdd" (taskAdded)="loadTasks()" />
+        <button type="submit" (click)="onClickAdd()" *ngIf="!isAdd"
+            class="btn btn-primary w-100 m-2">Добавить задачу</button>
+    </div>
+
+    <div class="col-12 col-lg-7 col-md-8">
+        <div class="card mb-3 m-2" *ngFor="let task of tasks">
+            <div class="card-body">
+                <h5 class="card-title">{{task.title}}</h5>
+                <p class="card-text">{{task.description}}</p>
+                <p class="card-text">
+                    <strong>Статус: </strong>
+                    <span class="status"
+                        [ngClass]="task.status ? 'status-green' : 'status-red'">{{task.status
+                        ?"Выполнена" :
+                        "Не выполнена"}}</span></p>
+
+                <a class="btn btn-primary me-2"
+                    [routerLink]="['/tasks', task.id]">Подробнее</a>
+                <a (click)="deleteTask(task.id)"
+                    class="btn btn-danger">Удалить</a>
+
+            </div>
+        </div>
+    </div>
+</div>
