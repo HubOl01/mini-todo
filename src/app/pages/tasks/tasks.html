@@ -4,7 +4,7 @@
 
 <div class="row w-100">
     <div
-        class="col-12 col-lg-4 col-xl-3 col-xxl-2 col-md-4 ps-4 pe-4">
+        class="col-12 col-lg-4 col-xl-3 col-xxl-3 col-md-4 ps-4 pe-4">
         <app-task-form *ngIf="isAdd" (taskAdded)="loadTasks()" />
         <button type="submit" (click)="onClickAdd()" *ngIf="!isAdd"
             class="btn btn-primary w-100 m-2">Добавить задачу</button>
